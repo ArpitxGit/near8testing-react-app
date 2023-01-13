@@ -23,3 +23,5 @@ soldity, hardhat, remix, mumbai.polygonscan
 ###### ERROR: This is already an existing address
 
 Proceeded to deploy with Remix and Verify with mumbai.polygonscan
+
+- [x] Near8Moments deployed on polygon mumbai to [0x6AF1F2B400c1433f3A5469CbA4122b3Ab3c4eec1](https://mumbai.polygonscan.com/address/0x6AF1F2B400c1433f3A5469CbA4122b3Ab3c4eec1#code)
