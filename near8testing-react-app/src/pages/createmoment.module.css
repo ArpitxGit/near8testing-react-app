@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+
+* {
+  margin: 0;
+}
+body {
+  background-color: black;
+  color: black;
+}
+.bt {
+  padding: 1.5px 2px !important;
+  width: 257px !important;
+  height: 60px !important;
+  border-radius: 15px !important;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, #f301af, #4844fd) !important;
+  background-clip: content-box, border-box;
+  color: white !important;
+}
+
+.loader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.momentItem {
+  padding: 5px;
+}
+
+.momentItem:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.modalBody {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  box-shadow: 24;
+  word-wrap: break-word;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modalValueDiv {
+  display: flex;
+}

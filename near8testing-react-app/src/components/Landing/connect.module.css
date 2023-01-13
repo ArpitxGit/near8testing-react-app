@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+.bt{
+    padding: 1.5px 2px !important;
+    width: 257px !important;
+    height: 60px !important;
+    border-radius: 15px !important;
+    background-image: linear-gradient(black, black), linear-gradient(to right, #f301af, #4844fd) !important;
+    background-clip: content-box, border-box;
+    color: white!important;
+}
+.cnct{
+    margin-top:20px;
+    margin-right: 20px;
+    display: flex !important;
+    text-align: center !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
