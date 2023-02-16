@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bt {
+  padding: 1.5px 2px !important;
+  width: 257px !important;
+  height: 60px !important;
+  border-radius: 15px !important;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, #f301af, #4844fd) !important;
+  background-clip: content-box, border-box;
+  color: white !important;
+}
+.cnct {
+  display: flex !important;
+  text-align: center !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+
+body {
+  background-color: black;
+  color: white !important;
+  font-family: "Cute Font";
+  font-size: 50px;
+}
+
+.content {
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.im {
+  margin-top: -120px;
+  width: 250px;
+  height: 200px;
+}
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+@supports (--custom: property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}

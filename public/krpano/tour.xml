@@ -1,0 +1,174 @@
+﻿<krpano showerrors="false" logkey="true " onstart="jscall(reactKrpano.onStart())">
+
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+        console.log('start timer')
+	</action>
+	
+	<!--<events name="hlookat_check" keep="true" onviewchanged="check_hlookat();"/>-->
+	
+	<events name="povdriven" keep="true" onviewchange="show_hotspots_in_range()" onclick="" />
+    <action name="show_hotspots_in_range">
+        for(set(i,0), i LT hotspot.count, inc(i), 
+            getlooktodistance(d, hotspot[get(i)].ath, hotspot[get(i)].atv); 
+                if(d LT 35,  
+                    DoBorder();
+					set(autorotate.enabled,false);
+					set(plugin[gyro].enabled,true)
+			
+					<!-- playsound(sound1, get(_audio)) -->
+                    );
+                    
+        );
+    
+	</action>
+	
+	<scene name="scene_1" title="a1" onstart=""  >
+        <image >
+           <sphere url="plugin:video" />
+		   
+        </image>	
+		
+		<view hlookat="0.0"
+		  vlookat="0.0"
+		  camroll="0.0"
+		  fovtype="VFOV"
+		  fov="90.0"
+		  fovmin="1.0"
+		  fovmax="179.0"
+		  maxpixelzoom=""
+		  mfovratio="1.333333"
+		  distortion="0.0"
+		  distortionfovlink="0.5"
+		  stereographic="true"
+		  pannini="0.0"
+		  architectural="0.0"
+		  architecturalonlymiddle="true"
+		  limitview="lookto"
+		  hlookatmin="-140"
+		  hlookatmax="70"
+		  vlookatmin="0"
+		  vlookatmax="0"
+		  rx="0" ry="0"
+		  tx="0" ty="0" tz="0"
+		  ox="0" oy="0" oz="0"
+		  />
+		
+		<!--<hotspot name="spot2" style="poi2" url="video/1890_portal.gif" ath="-125" atv="0" capture="true" onclick="stopsounds();openurl(../2a/,_self)" click="stopsounds();openurl(../2a/,_self)"/>-->
+		
+		<!--<hotspot name="spot2" style="poi2" url="video/1890_portal.gif" ath="-125" atv="0" capture="true" onclick="stopsounds();openurl(2/index.html)" click="stopsounds();openurl(2/index.html)"/>-->
+		
+		<hotspot
+            name="spot2" style="poi2" 
+             url="plugins/videoplayer.js"
+             videourl="video/1890_portal.mp4"
+             rx="0" ry="0" rz="0"
+             bgalpha="0.1"
+             distorted="true"
+             pausedonstart="false"
+             loop="true"
+             volume="0.8"
+             directionalsound="true"
+             range="90.0"
+             rangefalloff="1.0"
+             outofrangevolume="0.0"
+             onvideoready=""
+             onvideoplay=""
+             onvideopaused=""
+             onvideocomplete=""
+             onerror=""
+             visible="true"
+             scale="0.593999999999991" 
+             ath="-115" atv="0" 
+             width="1024" height="250"
+             capture="true" 
+			 onclick="stopsounds();openurl(../2a/,_self)" 
+             click="stopsounds();openurl(../2a/,_self)"
+         />                
+    </scene>
+		
+	<!--<layer name="intro2" type="text" keep="true" alpha="1" autalpha="true" width="100%" height="100%" bgcolor="0x000000" bgalpha="1" bgcapture="false"  html="Click to begin" css="font-family:Helvetica;font-size:16px;color:#ffffff;text-align:center;" vcenter="true" onclick="tween(alpha,0,,,removelayer(intro2));set(autorotate.enabled,true);"/>	-->
+	
+	<layer name="intro1" type="text" keep="true" alpha="1" autalpha="true" width="100%" height="100%" bgcolor="0x000000" bgalpha="1" bgcapture="false"  html="Headphones recommended.  Click to start sound." css="font-family:Helvetica;font-size:25px;color:#ffffff;text-align:center;" vcenter="true" onclick="playsound(bg, sound/Future.mp3|sound/Future.ogg, loops=0);tween(alpha,0,,,removelayer(intro1));plugin[video].play();set(autorotate.enabled,true);js(console.log('startCountdown'));js(krpanoCountdown())" />
+	
+	<style name="poi2"  renderer="css3d" distorted="true" scale="1.5" zorder="50" onover="set(autorotate.enabled,false);DoBorder();"/>
+	
+	
+    <plugin name="video" keep="true"
+        url="plugins/videoplayer.js"
+        videourl="video/DoorAnimation_v05_Centered_1920x1080.mp4"
+        posterurl=""
+        panovideo="true"
+        pausedonstart="false"
+        loop="true"
+        autoresume="true"
+        volume="1.0"
+        onvideoready=""
+        onvideoplay=""
+        onvideopaused=""
+        onvideocomplete=""
+        onerror=""
+        />
+        
+	<plugin name="gyro" devices="html5" keep="true"
+        url="gyro2.js" 
+        enabled="false"
+        camroll="true"
+        friction="0.2"
+        touch_mode="horizontaloffset"
+        sensor_mode="1"
+        softstart=".5"
+        autocalibration="false"
+        onavailable=""
+        onunavailable=""
+        onenable=""
+        ondisable=""
+        />
+		
+	<plugin name="soundinterface" keep="true"
+        url="plugins/soundinterface.js"
+        preload="true"
+		rootpath=""
+        volume="0.7"
+        mute="false"
+        />
+		
+	<autorotate enabled="false"
+		horizon="-3.14"
+        waittime="1.0" 
+        speed="8.0" 
+        accel="15"
+		tofov="160"
+		/>
+		
+	<action name="DoBorder">
+        delayedcall(0.5,
+            tween(layer[bst].alpha,1,0.7);
+            tween(layer[bsr].alpha,1,0.7);
+            tween(layer[bsb].alpha,1,0.7);
+            tween(layer[bsl].alpha,1,0.7,,
+                delayedcall(3,
+                    tween(layer[bst].alpha,0,0.3);
+                    tween(layer[bsr].alpha,0,0.3);
+                    tween(layer[bsb].alpha,0,0.3);
+                    tween(layer[bsl].alpha,0,0.3)
+                );
+            );
+        );
+    </action>
+    <style name="borderstyle" keep="true" enabled="false" autoalpha="true" alpha="0" type="container" bgcolor="0xff0000" bgalpha="1" /> 
+    <layer name="bst" style="borderstyle" align="top" width="100%" height="7" />
+    <layer name="bsr" style="borderstyle" align="right" width="7" height="100%" />
+    <layer name="bsb" style="borderstyle" align="bottom" width="100%" height="7" />
+    <layer name="bsl" style="borderstyle" align="left" width="7" height="100%" />
+      
+			
+	<view loadwhilemoving="true" />
+	   
+
+</krpano>
