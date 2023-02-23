@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import ConnectMetamask from "./ConnectMetamask";
 import { connect } from "react-redux";
 import styles from "./content.module.css";

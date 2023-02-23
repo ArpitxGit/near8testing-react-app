@@ -10,7 +10,7 @@ import CupertinoPaneContainer from "../components/Landing/CupertinoPaneContainer
 import _isEmpty from "lodash/isEmpty";
 import _get from "lodash/get";
 import { useNavigate, useLocation } from "react-router-dom";
-import { NFTStorage } from "https://cdn.jsdelivr.net/npm/nft.storage/dist/bundle.esm.min.js";
+import { NFTStorage } from "nft.storage";
 
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
