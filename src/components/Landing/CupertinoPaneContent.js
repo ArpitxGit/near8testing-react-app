@@ -47,7 +47,7 @@ function CupertinoPaneContent({ isMetaMaskConnected, metaMaskAddress, table }) {
           <label className="flex flex-col bg-black">
             <div className="flex">
               <a
-                href="//patreon.com/near8"
+                href="//honorable-level-49a.notion.site/Near8-Documentation-1a9f3a20c50c4285ab17f1b4aefc1d1e"
                 className="mx-auto flex-grow flex justify-center"
               >
                 <button className="p-1 sm:p-4 text-2xl items-center text-white mx-auto flex-grow flex justify-center border bg-transparent border-gray-500">
@@ -61,7 +61,7 @@ function CupertinoPaneContent({ isMetaMaskConnected, metaMaskAddress, table }) {
                       <polygon points=".012 95.988 17.59 95.988 17.59 .1 .012 .1" />
                     </g>
                   </svg>
-                  <b>SUPPORT</b> ON PATREON
+                  <b>Near8</b> Doc
                 </button>
               </a>
             </div>
