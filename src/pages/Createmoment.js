@@ -51,7 +51,14 @@ function Createmoment() {
 
   useEffect(() => {
     const getfn = async () => {
-      const xyz = await axios.get(`${BACKEND_URL}/userstr/str`);
+      const xyz = await axios.get(`${BACKEND_URL}/userstr/str`, {
+        headers: {
+          "Content-Type": "*/*",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,POST,OPTION,DELETE,PUT",
+          "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+        },
+      });
       //console.log(xyz.data);
       setMoments(xyz.data);
       setIsLoading(false);
