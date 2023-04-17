@@ -55,7 +55,7 @@ function Createmoment() {
         headers: {
           "Content-Type": "*/*",
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,POST,OPTION,DELETE,PUT",
+          "Access-Control-Allow-Methods": "GET,POST,OPTIONS,DELETE,PUT",
           "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
         },
       });

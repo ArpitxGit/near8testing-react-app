@@ -4,6 +4,8 @@ import styles from "./Cupertino.module.css";
 import ConnectMetamask from "./ConnectMetamask";
 import { connect } from "react-redux";
 
+import { ConnectButton } from "0xpass";
+
 function CupertinoPaneContent({ isMetaMaskConnected, metaMaskAddress, table }) {
   /**
    * logging in, signing up, and connecting to Metamask with near8's socials.
@@ -18,6 +20,9 @@ function CupertinoPaneContent({ isMetaMaskConnected, metaMaskAddress, table }) {
         )}
       >
         <div hide-on-bottom={"true"}></div>
+        <div>
+          <ConnectButton />
+        </div>
         <div className="mx-auto text-white md:px-16 px-4 section justify-center">
           <ConnectMetamask
             inline="true"
