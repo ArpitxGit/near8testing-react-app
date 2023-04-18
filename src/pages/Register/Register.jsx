@@ -9,6 +9,8 @@ import { connect } from "react-redux";
 import { fetchData } from "../../utils";
 import { checkIsEmail, checkIsLength } from "../../utils";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 const Register = ({ toast, isMetaMaskConnected, metaMaskAddress }) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -30,7 +32,7 @@ const Register = ({ toast, isMetaMaskConnected, metaMaskAddress }) => {
       return;
     }
     try {
-      let res = await fetchData("POST", `/user/signup`, {
+      let res = await fetchData("POST", `${BACKEND_URL}/user/signup`, {
         name,
         email,
         password,

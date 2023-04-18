@@ -189,6 +189,7 @@ function Formpage({ isMetaMaskConnected, metaMaskAddress }) {
   // } else {
   //   console.log("not connected");
   // }
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   const convertToDecimal = (bignumber) => {
     return ethers.utils.formatUnits(bignumber, 18);
@@ -452,7 +453,7 @@ function Formpage({ isMetaMaskConnected, metaMaskAddress }) {
         console.log(sender, newMomentId);
 
         //posting hash to backend to show on UI
-        const res = await axios.post(`/userstr/str`, {
+        const res = await axios.post(`${BACKEND_URL}/userstr/str`, {
           newstr,
           hasImage,
           cid,

@@ -46,10 +46,12 @@ function Createmoment() {
 
   // const {long,lat,time,name}=useLocation();
   // console.log(name,lat,time,name);
+  //axios code required to bring string from backend
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     const getfn = async () => {
-      const xyz = await axios.get(`/userstr/str`, {
+      const xyz = await axios.get(`${BACKEND_URL}/userstr/str`, {
         headers: {
           "Content-Type": "*/*",
           "Access-Control-Allow-Origin": "*",

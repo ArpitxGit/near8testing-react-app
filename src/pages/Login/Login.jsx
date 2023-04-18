@@ -13,6 +13,8 @@ import CupertinoPaneContainer from "../../components/Landing/CupertinoPaneContai
 import CupertinoPaneContent from "../../components/Landing/CupertinoPaneContent";
 import classNames from "classnames";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 const Login = ({
   loginMetaMask,
   toast,
@@ -34,7 +36,7 @@ const Login = ({
       return;
     }
     try {
-      let res = await fetchData("POST", `/user/login`, {
+      let res = await fetchData("POST", `${BACKEND_URL}/user/login`, {
         email,
         password,
       });
