@@ -451,9 +451,9 @@ function Formpage({ isMetaMaskConnected, metaMaskAddress }) {
 
         // update UI or store newMomentId in state
         console.log(sender, newMomentId);
-
+        const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
         //posting hash to backend to show on UI
-        const res = await axios.post(`/userstr/str`, {
+        const res = await axios.post(`${BACKEND_URL}/userstr/str`, {
           newstr,
           hasImage,
           cid,
