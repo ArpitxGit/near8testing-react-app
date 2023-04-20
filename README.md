@@ -2,7 +2,11 @@
 
 ## Backend:
 
-Deployed on akash network using spheron
+Deployed on akash network using spheron through dockerhub  
+docker build -t your-image-name:tag .  
+docker tag near8backendtesting:v1 arpitxdockerhub/near8_backend_mongo:v1  
+docker push arpitxdockerhub/near8_backend_mongo:v1
+
 running at [url](http://provider.bdl.computer:32245/)
 
 mongoDb, node.js, docker
