@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
 .bt {
   padding: 1.5px 2px !important;
-  width: 257px !important;
-  height: 60px !important;
+  width: 100% !important;
   border-radius: 15px !important;
   background-image: linear-gradient(black, black),
     linear-gradient(to right, #f301af, #4844fd) !important;
   background-clip: content-box, border-box;
   color: white !important;
+  margin-bottom: 16px;
 }
 .cnct {
   margin-top: 20px;

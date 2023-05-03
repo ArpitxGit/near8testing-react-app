@@ -26,10 +26,10 @@ function Content({ isMetaMaskConnected, metaMaskAddress, table }) {
             <div className="flex items-center justify-between">
               <img className="w-[20rem]" src={logo} alt="Logo" />
               <div className={"hidden sm:block"}>
-                <ConnectMetamask
+                {/* <ConnectMetamask
                   isMetaMaskConnected={isMetaMaskConnected}
                   metaMaskAddress={metaMaskAddress}
-                ></ConnectMetamask>
+                ></ConnectMetamask> */}
               </div>
             </div>
           </header>

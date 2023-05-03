@@ -20,9 +20,9 @@ function CupertinoPaneContent({ isMetaMaskConnected, metaMaskAddress, table }) {
         )}
       >
         <div hide-on-bottom={"true"}></div>
-        <div>
+        {/* <div>
           <ConnectButton />
-        </div>
+        </div> */}
         <div className="mx-auto text-white md:px-16 px-4 section justify-center">
           <ConnectMetamask
             inline="true"
